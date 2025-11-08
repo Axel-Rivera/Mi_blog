@@ -1,8 +1,42 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
+    <meta charset="UTF-8">
     <head>
         <title>
             Mi Blog
         </title>
+
+<style>
+        body {
+            color: #eee; /* Color de texto general para la página */
+            font-family: sans-serif;
+        }
+
+        .tabla-personalizada {
+            width: 80%; /* Ancho de la tabla */
+            margin: 20px auto; /* Centrar la tabla y añadir margen */
+            border-collapse: collapse; /* Fusionar los bordes */
+        }
+
+        .tabla-personalizada th, 
+        .tabla-personalizada td {
+            border: 1px solid #777; /* Borde gris más claro para las celdas */
+            padding: 8px; /* Espaciado interno en las celdas */
+            text-align: left; /* Alineación del texto a la izquierda */
+            color: white; /* ¡Texto blanco para las celdas! */
+        }
+
+        .tabla-personalizada th {
+            background-color: #444; /* Fondo oscuro para los encabezados */
+            color: white; /* Texto blanco en los encabezados */
+            text-align: center; /* Centrar el texto en los encabezados */
+        }
+
+        .tabla-personalizada tr:nth-child(even) {
+            background-color: #333; /* Fondo un poco más oscuro para filas pares (opcional) */
+        }
+    </style>
+
     </head>
          <body bgcolor="black">
             <center>
@@ -42,7 +76,7 @@
                 
             </font>
 
-            <table>
+            <table class="tabla-personalizada">
     <thead>
         <tr>
             <th> 1</th>
