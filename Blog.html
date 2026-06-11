@@ -69,25 +69,32 @@
     </div>
 
     <script>
-        function validar() {
-            var userCorrecto = "QXJlbHk=";
-            var passCorrecto = "me gustas";
-            var user = document.getElementById("usuario").value;
-            var pass = document.getElementById("pass").value;
+    function validar() {
+        
+        var userCorrectoHash = "QXJlbHk="; 
+        var passCorrecto = "me gustas";
+        
+       
+        var userIngresado = document.getElementById("usuario").value.trim();
+        var passIngresado = document.getElementById("pass").value;
+        
+        
+        var userIngresadoHash = btoa(userIngresado);
 
-            if (user === userCorrecto && pass === passCorrecto) {
-                if (confirm("Datos correctos. ¿Puede mantener el secreto?")) {
-                    window.location.href = "really.html";
-                }
-            } else if (user !== userCorrecto && pass !== passCorrecto) {
-                alert("Error: Tanto el usuario como la contraseña son incorrectos.");
-            } else if (user !== userCorrecto) {
-                alert("Error: El usuario es incorrecto.");
-            } else {
-                alert("Error: La contraseña es incorrecta.");
+        
+        if (userIngresadoHash === userCorrectoHash && passIngresado === passCorrecto) {
+            if (confirm("Datos correctos. ¿Puede mantener el secreto?")) {
+                window.location.href = "really.html";
             }
+        } else if (userIngresadoHash !== userCorrectoHash && passIngresado !== passCorrecto) {
+            alert("Error: Tanto el usuario como la contraseña son incorrectos.");
+        } else if (userIngresadoHash !== userCorrectoHash) {
+            alert("Error: El usuario es incorrecto.");
+        } else {
+            alert("Error: La contraseña es incorrecta.");
         }
-    </script> 
+    }
+</script>
     
     <footer class="mi-footer">
         <p>Lo encontraste...?</p>
