@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <title>Mi Blog</title>
     
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
-        body { color: #eee; font-family: sans-serif; background-color: black; text-align: center; }
+        body { color: #eee; font-family: sans-serif; background-color: black; text-align: center; padding: 20px; }
+        
         .tabla-personalizada { width: 80%; margin: 20px auto; border-collapse: collapse; }
-        .tabla-personalizada th, .tabla-personalizada td { border: 1px solid #777; padding: 8px; color: white; }
-        .tabla-personalizada th { background-color: #444; }
-        .mi-footer { color: #fff; margin-top: 50px; }
-        #login-section { display: none; margin-top: 20px; }
+        .tabla-personalizada th, .tabla-personalizada td { border: 1px solid #777; padding: 8px; color: white; text-align: left; }
+        .tabla-personalizada th { background-color: #444; text-align: center; }
+        .tabla-personalizada tr:nth-child(even) { background-color: #333; }
+        
+        #login-section { display: none; margin-top: 30px; padding: 20px; background: #222; display: inline-block; }
+        .mi-footer { color: #888; margin-top: 50px; }
         input { padding: 8px; margin: 5px; color: black; }
     </style>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <h1>Mira detrás del escenario</h1>
-    <!--<h1>BACKSTAGE</h1>
+    
+    <!-- <h1>BACKSTAGE</h1>
     
     <img src="imagen1.png" width="200" height="200" alt="Backstage">
     
@@ -41,14 +44,11 @@
     <div style="text-align: left; margin: 0 10%;">
         <p>HINTS:</p>
         <p>1. \( 128\sqrt{e^{98}} \)</p>
-        <p>2. Curva: 
-            \( x(t) = 16 \sin^3(t) \) 
-            \( y(t) = 13 \cos(t) - 5 \cos(2t) - 2 \cos(3t) - \cos(4t) \) 
-            con \( t \in [0, 2\pi] \)
-        </p>
+        <p>2. Curva: \( x(t) = 16 \sin^3(t) \), \( y(t) = 13 \cos(t) - 5 \cos(2t) - 2 \cos(3t) - \cos(4t) \) con \( t \in [0, 2\pi] \)</p>
     </div>
 
-    <button onclick="mostrarFormulario()" style="background-color: #888; color: black; padding: 10px 20px; border: none; cursor: pointer;">
+    <button onclick="document.getElementById('login-section').style.display='block'" 
+            style="background-color: #888; color: black; padding: 10px 20px; border: none; cursor: pointer; margin-top: 20px;">
         Secret
     </button>
 
@@ -60,26 +60,16 @@
     </div>
 
     <script>
-        function mostrarFormulario() {
-            document.getElementById('login-section').style.display = 'block';
-        }
-
         function validar() {
-            var userCorrecto = "Nadie";
-            var passCorrecto = "me gustas";
-            var userIngresado = document.getElementById("usuario").value;
-            var passIngresado = document.getElementById("pass").value;
+            var user = document.getElementById("usuario").value;
+            var pass = document.getElementById("pass").value;
 
-            if (userIngresado === userCorrecto && passIngresado === passCorrecto) {
+            if (user === "Nadie" && pass === "me gustas") {
                 if (confirm("Datos correctos. ¿Puede mantener el secreto?")) {
                     window.location.href = "really.html";
                 }
-            } else if (userIngresado !== userCorrecto && passIngresado === passCorrecto) {
-                alert("Error: El usuario es incorrecto.");
-            } else if (userIngresado === userCorrecto && passIngresado !== passCorrecto) {
-                alert("Error: La contraseña es incorrecta.");
             } else {
-                alert("Error: Tanto el usuario como la contraseña son incorrectos.");
+                alert("Usuario o contraseña incorrectos.");
             }
         }
     </script> -->
