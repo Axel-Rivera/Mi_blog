@@ -104,7 +104,7 @@
 <font color="white">
 
  <p>HINTS:  </p>
- <p>1. \( 128\sqrt{e^{98}} \ </p>
+ <p>1. \( 128\sqrt{e^{98}} )\ </p>
  <p>2. Curva (\[ 
     x(t) = 16 \sin^3(t) 
     \]
@@ -114,8 +114,36 @@
     <p>Con \( t \in [0, 2\pi] \) )</p> 
 
 </font>
+<script>
+        function mostrarFormulario() {
+            document.getElementById('login-section').style.display = 'block';
+        }
 
--->
+        function validar() {
+            var userCorrecto = "Nadie";
+            var passCorrecto = "me gustas";
+            
+            var userIngresado = document.getElementById("usuario").value;
+            var passIngresado = document.getElementById("pass").value;
+
+            // Validación detallada
+            if (userIngresado === userCorrecto && passIngresado === passCorrecto) {
+                // Todo correcto
+                if (confirm("Datos correctos. ¿Puede mantener el secreto?")) {
+                    window.location.href = "really.html";
+                }
+            } else if (userIngresado !== userCorrecto && passIngresado === passCorrecto) {
+                // El usuario se equivocó, pero la contraseña está bien
+                alert("Error: El usuario es incorrecto.");
+            } else if (userIngresado === userCorrecto && passIngresado !== passCorrecto) {
+                // El usuario está bien, pero la contraseña falló
+                alert("Error: La contraseña es incorrecta.");
+            } else {
+                // Ambos están mal
+                alert("Error: Tanto el usuario como la contraseña son incorrectos.");
+            }
+        }
+    </script>-->
 
     
     <footer class="mi-footer">
