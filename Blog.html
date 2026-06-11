@@ -1,120 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
     <meta charset="UTF-8">
-    <head>
-        <title>
-            Mi Blog
-        </title>
-
-<style>
-        body {
-            color: #eee; /* Color de texto general para la página */
-            font-family: sans-serif;
-        }
-
-        .tabla-personalizada {
-            width: 80%; /* Ancho de la tabla */
-            margin: 20px auto; /* Centrar la tabla y añadir margen */
-            border-collapse: collapse; /* Fusionar los bordes */
-        }
-
-        .tabla-personalizada th, 
-        .tabla-personalizada td {
-            border: 1px solid #777; /* Borde gris más claro para las celdas */
-            padding: 8px; /* Espaciado interno en las celdas */
-            text-align: left; /* Alineación del texto a la izquierda */
-            color: white; /* ¡Texto blanco para las celdas! */
-        }
-
-        .tabla-personalizada th {
-            background-color: #444; /* Fondo oscuro para los encabezados */
-            color: white; /* Texto blanco en los encabezados */
-            text-align: center; /* Centrar el texto en los encabezados */
-        }
-
-        .tabla-personalizada tr:nth-child(even) {
-            background-color: #333; /* Fondo un poco más oscuro para filas pares (opcional) */
-        }
-
-    .mi-footer {
-    color: #000000; /* Negro puro */
-    font-weight: normal; /* Asegura que no esté en negrita a menos que lo quieras */
-}
+    <title>Mi Blog</title>
+    
+    <style>
+        body { color: #eee; font-family: sans-serif; background-color: black; text-align: center; }
+        .tabla-personalizada { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        .tabla-personalizada th, .tabla-personalizada td { border: 1px solid #777; padding: 8px; color: white; }
+        .tabla-personalizada th { background-color: #444; }
+        .mi-footer { color: #fff; margin-top: 50px; }
+        #login-section { display: none; margin-top: 20px; }
+        input { padding: 8px; margin: 5px; color: black; }
     </style>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
 
-    </head>
-          <body bgcolor="black">
-            <center>
-                <font color="white">
-                <h1>Mira detrás del escenario</h1>
-                </font>
-            </center>
+    <h1>Mira detrás del escenario</h1>
+    <!--<h1>BACKSTAGE</h1>
+    
+    <img src="imagen1.png" width="200" height="200" alt="Backstage">
+    
+    <h3>Mire una tabla :O ↓</h3>
+    <table class="tabla-personalizada">
+        <thead>
+            <tr><th>1</th><th>2</th><th>3</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1, 1</td><td>1, 2</td><td>1, 3</td></tr>
+            <tr><td>2, 1</td><td>2, 2</td><td>2, 3</td></tr>
+        </tbody>
+        <tfoot>
+            <tr><td>Pie de tabla</td><td colspan="2">Nota o Resumen</td></tr>
+        </tfoot>
+    </table>
 
-          <!--   <center>
-                <font color="white">
-                    <h1>BACKSTAGE</h1>
-                </font>
-            </center>
-            <br>
-            <br>
-            <br>
-            <center>
-                <img src="imagen1.png" width="200" height="200">
-            </center>
-            <center>
-                <br>
-                <br>
-                <h3>Mire una tabla :O ↓</h3>
+    <div style="text-align: left; margin: 0 10%;">
+        <p>HINTS:</p>
+        <p>1. \( 128\sqrt{e^{98}} \)</p>
+        <p>2. Curva: 
+            \( x(t) = 16 \sin^3(t) \) 
+            \( y(t) = 13 \cos(t) - 5 \cos(2t) - 2 \cos(3t) - \cos(4t) \) 
+            con \( t \in [0, 2\pi] \)
+        </p>
+    </div>
 
-            <table class="tabla-personalizada">
-    <thead>
-        <tr>
-            <th> 1</th>
-            <th> 2</th>
-            <th> 3</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td> 1,  1</td>
-            <td> 1,  2</td>
-            <td> 1,  3</td>
-        </tr>
-        <tr>
-            <td> 2, </td>
-            <td> 2, </td>
-            <td> 2, </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td>Pie de tabla</td>
-            <td colspan="2">Nota o Resumen</td>
-        </tr>
-    </tfoot>
-</table>
+    <button onclick="mostrarFormulario()" style="background-color: #888; color: black; padding: 10px 20px; border: none; cursor: pointer;">
+        Secret
+    </button>
 
-<br>
-<br>
-<br>
-<br>
-<font color="white">
+    <div id="login-section">
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="pass" placeholder="Contraseña">
+        <br>
+        <button onclick="validar()">Entrar</button>
+    </div>
 
- <p>HINTS:  </p>
- <p>1. \( 128\sqrt{e^{98}} )\ </p>
- <p>2. Curva (\[ 
-    x(t) = 16 \sin^3(t) 
-    \]
-    \[ 
-    y(t) = 13 \cos(t) - 5 \cos(2t) - 2 \cos(3t) - \cos(4t) 
-    \]
-    <p>Con \( t \in [0, 2\pi] \) )</p> 
-
-</font>
-<script>
+    <script>
         function mostrarFormulario() {
             document.getElementById('login-section').style.display = 'block';
         }
@@ -122,32 +67,26 @@
         function validar() {
             var userCorrecto = "Nadie";
             var passCorrecto = "me gustas";
-            
             var userIngresado = document.getElementById("usuario").value;
             var passIngresado = document.getElementById("pass").value;
 
-            // Validación detallada
             if (userIngresado === userCorrecto && passIngresado === passCorrecto) {
-                // Todo correcto
                 if (confirm("Datos correctos. ¿Puede mantener el secreto?")) {
                     window.location.href = "really.html";
                 }
             } else if (userIngresado !== userCorrecto && passIngresado === passCorrecto) {
-                // El usuario se equivocó, pero la contraseña está bien
                 alert("Error: El usuario es incorrecto.");
             } else if (userIngresado === userCorrecto && passIngresado !== passCorrecto) {
-                // El usuario está bien, pero la contraseña falló
                 alert("Error: La contraseña es incorrecta.");
             } else {
-                // Ambos están mal
                 alert("Error: Tanto el usuario como la contraseña son incorrectos.");
             }
         }
-    </script>-->
-
+    </script> -->
     
     <footer class="mi-footer">
         <p>Lo encontraste...?</p>
     </footer>
-        </body> 
+
+</body> 
 </html>
