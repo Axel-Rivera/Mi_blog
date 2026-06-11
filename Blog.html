@@ -71,11 +71,11 @@
     <script>
     function validar() {
         
-        var userCorrectoHash = "QXJlbHk="; 
+        var userCorrectoHash = "YXJlbHk="; 
         var passCorrecto = "me gustas";
         
        
-        var userIngresado = document.getElementById("usuario").value.trim();
+        var userIngresado = document.getElementById("usuario").value.trim().toLowerCase();
         var passIngresado = document.getElementById("pass").value.trim().toLowerCase().replace(/\s+/g, ' ');
         
         
