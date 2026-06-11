@@ -76,7 +76,7 @@
         
        
         var userIngresado = document.getElementById("usuario").value.trim();
-        var passIngresado = document.getElementById("pass").value;
+        var passIngresado = document.getElementById("pass").value.trim().replace(/\s+/g, ' ');
         
         
         var userIngresadoHash = btoa(userIngresado);
