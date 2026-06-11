@@ -7,69 +7,75 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <style>
-        body { color: #eee; font-family: sans-serif; background-color: black; text-align: center; padding: 20px; }
+        body { color: #eee; font-family: sans-serif; background-color: black; text-align: center; margin: 0; padding: 20px; }
         
         .tabla-personalizada { width: 80%; margin: 20px auto; border-collapse: collapse; }
         .tabla-personalizada th, .tabla-personalizada td { border: 1px solid #777; padding: 8px; color: white; text-align: left; }
         .tabla-personalizada th { background-color: #444; text-align: center; }
-        .tabla-personalizada tr:nth-child(even) { background-color: #333; }
         
-        #login-section { display: none; margin-top: 30px; padding: 20px; background: #222; display: inline-block; }
-        .mi-footer { color: #888; margin-top: 50px; }
-        input { padding: 8px; margin: 5px; color: black; }
+        /* Footer negro absoluto */
+        .mi-footer { color: #000000; background-color: #000000; padding: 20px; margin-top: 50px; }
+        
+        /* Ventana flotante (Modal) */
+        .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); }
+        .modal-contenido { background-color: #333; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 300px; color: white; }
+        input { padding: 8px; margin: 5px; color: black; width: 80%; }
     </style>
 </head>
 <body>
 
     <h1>Mira detrás del escenario</h1>
-    
     <!-- <h1>BACKSTAGE</h1>
     
     <img src="imagen1.png" width="200" height="200" alt="Backstage">
     
     <h3>Mire una tabla :O ↓</h3>
     <table class="tabla-personalizada">
-        <thead>
-            <tr><th>1</th><th>2</th><th>3</th></tr>
-        </thead>
+        <thead><tr><th>1</th><th>2</th><th>3</th></tr></thead>
         <tbody>
             <tr><td>1, 1</td><td>1, 2</td><td>1, 3</td></tr>
             <tr><td>2, 1</td><td>2, 2</td><td>2, 3</td></tr>
         </tbody>
-        <tfoot>
-            <tr><td>Pie de tabla</td><td colspan="2">Nota o Resumen</td></tr>
-        </tfoot>
+        <tfoot><tr><td>Pie de tabla</td><td colspan="2">Nota o Resumen</td></tr></tfoot>
     </table>
 
     <div style="text-align: left; margin: 0 10%;">
         <p>HINTS:</p>
-        <p>1. \( 128\sqrt{e^{98}} \)</p>
+        <p>1. \( 128\sqrt{e98} \)</p>
         <p>2. Curva: \( x(t) = 16 \sin^3(t) \), \( y(t) = 13 \cos(t) - 5 \cos(2t) - 2 \cos(3t) - \cos(4t) \) con \( t \in [0, 2\pi] \)</p>
     </div>
 
-    <button onclick="document.getElementById('login-section').style.display='block'" 
-            style="background-color: #888; color: black; padding: 10px 20px; border: none; cursor: pointer; margin-top: 20px;">
+    <button onclick="document.getElementById('miModal').style.display='block'" 
+            style="background-color: #888; color: black; padding: 10px 20px; border: none; cursor: pointer;">
         Secret
     </button>
 
-    <div id="login-section">
-        <input type="text" id="usuario" placeholder="Usuario">
-        <input type="password" id="pass" placeholder="Contraseña">
-        <br>
-        <button onclick="validar()">Entrar</button>
+    <div id="miModal" class="modal">
+        <div class="modal-contenido">
+            <input type="text" id="usuario" placeholder="Usuario"><br>
+            <input type="password" id="pass" placeholder="Contraseña"><br>
+            <button onclick="validar()">Entrar</button>
+            <button onclick="document.getElementById('miModal').style.display='none'">Cerrar</button>
+        </div>
     </div>
 
     <script>
         function validar() {
+            var userCorrecto = "Nadie";
+            var passCorrecto = "me gustas";
             var user = document.getElementById("usuario").value;
             var pass = document.getElementById("pass").value;
 
-            if (user === "Nadie" && pass === "me gustas") {
+            if (user === userCorrecto && pass === passCorrecto) {
                 if (confirm("Datos correctos. ¿Puede mantener el secreto?")) {
                     window.location.href = "really.html";
                 }
+            } else if (user !== userCorrecto && pass !== passCorrecto) {
+                alert("Error: Tanto el usuario como la contraseña son incorrectos.");
+            } else if (user !== userCorrecto) {
+                alert("Error: El usuario es incorrecto.");
             } else {
-                alert("Usuario o contraseña incorrectos.");
+                alert("Error: La contraseña es incorrecta.");
             }
         }
     </script> -->
